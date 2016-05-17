@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block deconnect %}
+    {% include "default/deconnect.html.twig" %}
+{% endblock %}
+
+{% block section %}
+    <h3>{{ title }}</h3>
+    {{ form(form) }}
+
+    <p><a href="{{ path('index') }}">Retour Liste</a></p>
+{% endblock %}

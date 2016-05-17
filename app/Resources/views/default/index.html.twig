@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="register">
+        {{ render(controller("FOSUserBundle:Security:login")) }}
+        <br>
+        <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans([], 'FOSUserBundle') }}</a>
+    </div>
+{% endblock %}

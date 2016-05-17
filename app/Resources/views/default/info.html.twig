@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block deconnect %}
+    {% include "default/deconnect.html.twig" %}
+{% endblock %}
+
+{% block section %}
+    <div class="info">
+        <h3>{{ info.prenom }} {{ info.nom }}</h3>
+        <p><span>Adresse:</span> {{info.adresse}}</p>
+        <p><span>Telephone:</span> {{info.telephone}}</p>
+        <p><span>Site web:</span> {{info.web}}</p>
+        <p><a href="{{ path('update', {'id': info.id}) }}">Modifier</a></p>
+    </div>
+    <p><a href="{{ path('index') }}">Retour Liste</a></p>
+{% endblock %}

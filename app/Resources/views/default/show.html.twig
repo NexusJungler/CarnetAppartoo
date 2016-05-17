@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block deconnect %}
+    {% include "default/deconnect.html.twig" %}
+{% endblock %}
+
+{% block section %}
+
+    <h3>Liste des contacts de {{ user }}</h3>
+    <div class="liste">
+        {% for item in contacts %}
+            <p data-id="{{ item.id }}">
+                <input type="button" value="X">
+                {{item.nom}} {{item.prenom}}
+                <a href="{{ path( 'info', {'id': item.id} ) }}"><img src="{{ asset('bundles/images/loupe.png') }}"></a>
+            </p>
+            <div class="clear"></div>
+        {% endfor %}
+    </div>
+    <p><a href="{{ path('ajouter') }}">Ajouter un nouveau contact</a></p>
+
+{% endblock %}
